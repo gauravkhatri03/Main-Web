@@ -1,0 +1,100 @@
+.chb {
+    margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Exo", sans-serif;
+	color: #fff;
+    background-color: #FFE53B;
+    background: linear-gradient(120deg, #8a2387, #e94057, #f27121,#fc05b2,#FEE140); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;
+
+        background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite !important;
+	        animation: gradientBG 10s ease infinite !important;
+}
+.chbL {
+    margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Exo", sans-serif;
+	color: #fff;
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+
+        background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite !important;
+	        animation: gradientBG 10s ease infinite !important;
+}
+.chbR {
+    margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Exo", sans-serif;
+	color: #fff;
+    background: #40E0D0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+        background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite !important;
+	        animation: gradientBG 10s ease infinite !important;
+}
+#chb2 {
+    background-color: #FEE140;
+    background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+}
+.flx {
+    display: flex;
+    flex-direction: column;
+}
+.mf{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 800px;
+    font-weight: 400;
+    font-size: 1.35714286em;
+    line-height: 1.68421053em;
+}
+.sub1{
+    flex-basis: 300px;
+}
+.one {
+    margin-left: 18rem;
+}
+@keyframes color2 
+{
+    0%{
+        background: #05b6fc;
+    }
+    25%{
+        background: #FEE140
+    }
+    50%{
+        background: #fc05b2;
+    }
+    75%{
+        background: #f27121;
+    }
+    100%{
+        background: #05b6fc;
+    }
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 25%;
+    }
+    25% {
+        background-position: 25% 50%;
+    }
+	50% {
+		background-position: 50% 75%;
+    }
+    75% {
+        background-position: 75% 100%;
+    }
+	100% {
+		background-position: 0% 50%;
+	}
+}
