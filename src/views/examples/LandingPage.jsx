@@ -66,62 +66,62 @@ class LandingPage extends React.Component {
         <div className="mf2">
         <Carousel enableKeyboardControls={true} withoutControls={false} style={{height:'550px'}}>
         <div className="one">
-        <h3 className="title" style={{marginLeft:'25.5rem'}}>Slide 1</h3>
-          <div className="row">
+        <h3 className="title">Slide 1</h3>
+          <div className="row mrf">
             <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
+              <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
             </div>
             <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
+            <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
             </div>
             <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
-            </div>
-          </div>
-        </div>
-        <div className="one">
-          <h3 className="title" style={{marginLeft:'25.5rem'}}>Slide 2</h3>
-          <div className="row">
-            <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
-            </div>
-            <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
-            </div>
-            <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
+            <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
             </div>
           </div>
         </div>
         <div className="one">
-          <h3 className="title" style={{marginLeft:'25.5rem'}}>Slide 3</h3>
-          <div className="row">
+          <h3 className="title">Slide 2</h3>
+          <div className="row mrf">
             <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
+              <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
             </div>
             <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
+            <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
             </div>
             <div className="col-md-4 col-sm-12">
-              <img src="#" alt="Profile-Photo" className="img-center img-fluid rounded-circle"/>
-              <h4 className="title">Name</h4>
-              <p>Designation</p>
+            <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
+            </div>
+          </div>
+        </div>
+        <div className="one">
+          <h3 className="title">Slide 3</h3>
+          <div className="row mrf">
+            <div className="col-md-4 col-sm-12">
+              <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
+            </div>
+            <div className="col-md-4 col-sm-12">
+            <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
+            </div>
+            <div className="col-md-4 col-sm-12">
+            <img src={require('../../assets/img/ryan.jpg')} alt="Profile-Photo" className=" rounded-circle img-set img-center"/>
+              <h4 className="title text-center">Name</h4>
+              <p className="text-center">Designation</p>
             </div>
           </div>
         </div>

@@ -63,6 +63,13 @@
 .one {
     margin-left: 18rem;
 }
+$widthImg: 34%;
+.img-set {
+    max-width: $widthImg;
+}
+.mrf {
+    margin-left: -255px;
+}
 @keyframes color2 
 {
     0%{
