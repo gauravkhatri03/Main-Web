@@ -16,7 +16,8 @@ class PageHeader extends React.Component {
         <div className="squares square7" id="chb2"/>
         <Container>
           <div className="content-center brand">
-            <h1 className="h1-seo">{this.props.pageName}</h1>
+          {!!this.props.sub?<h3 className="text-on-back under">{this.props.sub}</h3>:null}
+            <h1 className="h1-seo over">{this.props.pageName}</h1>
             <h3 className="d-none d-sm-block">
               {this.props.para}
             </h3>

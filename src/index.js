@@ -28,8 +28,6 @@ import Index from "views/Index.jsx";
 import LandingPage from "views/examples/LandingPage.jsx";
 import RegisterPage from "views/examples/RegisterPage.jsx";
 import ProfilePage from "views/examples/ProfilePage.jsx";
-import PageHeader from "./components/PageHeader/PageHeader";
-
 ReactDOM.render(
   <div>
     <BrowserRouter>

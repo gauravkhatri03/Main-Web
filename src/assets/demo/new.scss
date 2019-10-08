@@ -19,8 +19,8 @@
 	font-family: "Exo", sans-serif;
 	color: #fff;
     background: #12c2e9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9, #19ef0e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9, #19ef0e);
 
         background-size: 400% 400%;
 	-webkit-animation: gradientBG 10s ease infinite !important;
@@ -32,9 +32,10 @@
 	height: 100vh;
 	font-family: "Exo", sans-serif;
 	color: #fff;
-    background: #40E0D0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #e96443;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 
         background-size: 400% 400%;
@@ -57,6 +58,9 @@
     font-size: 1.35714286em;
     line-height: 1.68421053em;
 }
+.mt-6{
+    margin-top: 15rem;
+}
 .sub1{
     flex-basis: 300px;
 }
@@ -69,6 +73,24 @@ $widthImg: 34%;
 }
 .mrf {
     margin-left: -255px;
+}
+.under {
+    z-index: 1;
+}
+.over {
+    z-index: 2;
+    margin-top: -120px;
+    margin-left:20px;
+}
+@media screen and (max-width:1040px){
+    .mt-6 {
+        margin-top: 17rem;
+    }
+}
+@media screen and (max-width:974px){
+    .mt-6 {
+        margin-top: 27rem;
+    }
 }
 @keyframes color2 
 {
@@ -105,3 +127,19 @@ $widthImg: 34%;
 		background-position: 0% 50%;
 	}
 }
+
+.anim, .anim svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.4;
+  }
+  .anim path {
+    stroke-width: 2;
+  }
+.suburb {
+    z-index:4;
+    margin-top: -800px;
+    color: white;
+  }
