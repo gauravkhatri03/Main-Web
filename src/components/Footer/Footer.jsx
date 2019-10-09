@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../assets/demo/new.scss';
 // reactstrap components
 import {
   Button,
@@ -15,7 +16,7 @@ import {
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="footer">
+      <footer className={"footer " + this.props.g }>
         <Container>
           <Row>
             <Col md="3">

@@ -12,6 +12,14 @@
 	-webkit-animation: gradientBG 10s ease infinite !important;
 	        animation: gradientBG 10s ease infinite !important;
 }
+.chf {
+    background-color: #FFE53B;
+    background: linear-gradient(120deg, #8a2387, #e94057, #f27121,#fc05b2,#FEE140);
+
+        background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite !important;
+	        animation: gradientBG 10s ease infinite !important;
+}
 .chbL {
     margin: 0;
 	width: 100%;
@@ -25,6 +33,21 @@
         background-size: 400% 400%;
 	-webkit-animation: gradientBG 10s ease infinite !important;
 	        animation: gradientBG 10s ease infinite !important;
+}
+.chfL {
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9, #19ef0e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9, #19ef0e) ;
+
+        background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite !important;
+	        animation: gradientBG 10s ease infinite !important;
+}
+.chfR {
+    background: #e96443;  /* fallback for old browsers */   
+    background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .chbR {
     margin: 0;

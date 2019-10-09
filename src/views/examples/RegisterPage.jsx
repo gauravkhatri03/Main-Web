@@ -30,14 +30,16 @@ class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gradient: 'chb'
+      gradient: 'chb',
+      foot: null
     }
   }
   componentDidMount() {
     document.body.classList.toggle("index-page");
     this.setState(()=>{
       return {
-        gradient: 'chbR'
+        gradient: 'chbR',
+        foot: 'chfR'
       }
     })
   }
@@ -46,7 +48,8 @@ class RegisterPage extends React.Component {
     document.body.classList.toggle("index-page");
     this.setState(()=>{
       return {
-        gradient: 'chb'
+        gradient: 'chb',
+        foot: null
       }
     })
   }
@@ -54,7 +57,7 @@ class RegisterPage extends React.Component {
     const p = "We’d love to hear from you. Talk to us about whatever you like, ask us a question or tell us about something you may be interested in. We are all ears."  
     return (
       <>
-      <IndexNavbar />
+      <IndexNavbar g= {this.state.foot}/>
       <div className="wrapper">
         <PageHeader  pageName="Get In Touch" gradient={this.state.gradient}  para={p} sub="Contact"/>
         <div className="main">
@@ -168,7 +171,7 @@ class RegisterPage extends React.Component {
             </Container>
           </section>
         </div>
-        <Footer />
+        <Footer g={this.state.foot} />
       </div>
       </>
     );

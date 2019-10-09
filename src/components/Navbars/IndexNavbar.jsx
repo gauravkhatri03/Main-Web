@@ -32,7 +32,7 @@ class PagesNavbar extends React.Component {
       document.body.scrollTop > 99
     ) {
       this.setState({
-        color: "bg-default"
+        color: this.props.g
       });
     } else if (
       document.documentElement.scrollTop < 100 ||

@@ -11,14 +11,16 @@ class LandingPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gradient: 'chb'
+      gradient: 'chb',
+      foot: null
     }
   }
   componentDidMount() {
     document.body.classList.toggle("index-page");
     this.setState(()=>{
       return {
-        gradient: 'chbL'
+        gradient: 'chbL',
+        foot: 'chfL'
       }
     })
     var pathEls = document.querySelectorAll('path');
@@ -45,7 +47,8 @@ for (var i = 0; i < pathEls.length; i++) {
     document.body.classList.toggle("index-page");
     this.setState(()=>{
       return {
-        gradient: 'chb'
+        gradient: 'chb',
+        foot: null
       }
     })
   }
@@ -54,7 +57,7 @@ for (var i = 0; i < pathEls.length; i++) {
     const p = "We are the official newsletter of DTU";
     return (
       <>
-      <IndexNavbar />
+      <IndexNavbar g= {this.state.foot}/>
       <div className="wrapper flx">
         <PageHeader  pageName="Hi, We're DTU Times" gradient={this.state.gradient} para={p} className="mf1" sub="About"/>
         <div className="main mf">
@@ -175,7 +178,7 @@ for (var i = 0; i < pathEls.length; i++) {
        
 
         </div>
-        <Footer />
+        <Footer g={this.state.foot}/>
       </div>
     </>
     );
