@@ -21,12 +21,12 @@ class Footer extends React.Component {
           <Row>
             <Col md="3">
               <h3>About</h3>
-              DTU Times is the Official Newsletter of Delhi Technological
+              <p style={{color:'white'}}>DTU Times is the Official Newsletter of Delhi Technological
               University, formerly known as Delhi College of Engineering. We
               warmly welcome you to the revamped DTU Times Website. Explore the
               various sections, browse the blog or scan out the archive. You are
               sure to find content to suit your appetite, and more. There’s
-              something in store for everyone!
+              something in store for everyone!</p>
             </Col>
             <Col md="3">
               <Nav>

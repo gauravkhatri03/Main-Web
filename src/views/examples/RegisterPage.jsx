@@ -30,11 +30,15 @@ class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      squares1to6: "",
+      squares7and8: "",
       gradient: 'chb',
       foot: null
     }
   }
   componentDidMount() {
+    document.body.classList.toggle("register-page");
+    document.documentElement.addEventListener("mousemove", this.followCursor);
     document.body.classList.toggle("index-page");
     this.setState(()=>{
       return {
@@ -44,7 +48,11 @@ class RegisterPage extends React.Component {
     })
   }
   componentWillUnmount() {
-    
+    document.body.classList.toggle("register-page");
+    document.documentElement.removeEventListener(
+      "mousemove",
+      this.followCursor
+    );
     document.body.classList.toggle("index-page");
     this.setState(()=>{
       return {
@@ -53,6 +61,24 @@ class RegisterPage extends React.Component {
       }
     })
   }
+  followCursor = event => {
+    let posX = event.clientX - window.innerWidth / 2;
+    let posY = event.clientY - window.innerWidth / 6;
+    this.setState({
+      squares1to6:
+        "perspective(500px) rotateY(" +
+        posX * 0.05 +
+        "deg) rotateX(" +
+        posY * -0.05 +
+        "deg)",
+      squares7and8:
+        "perspective(500px) rotateY(" +
+        posX * 0.02 +
+        "deg) rotateX(" +
+        posY * -0.02 +
+        "deg)"
+    });
+  };
   render() {
     const p = "We’d love to hear from you. Talk to us about whatever you like, ask us a question or tell us about something you may be interested in. We are all ears."  
     return (
@@ -62,6 +88,18 @@ class RegisterPage extends React.Component {
         <PageHeader  pageName="Get In Touch" gradient={this.state.gradient}  para={p} sub="Contact"/>
         <div className="main">
         <section className="section">
+        <div className="squares square1" id="chb2"/>
+        <div className="squares square2" id="chb2"/>
+        <div
+            className="square square-7"
+            id="square7"
+            style={{ transform: this.state.squares7and8 }}
+        />
+                    <div
+                      className="square square-8"
+                      id="square8"
+                      style={{ transform: this.state.squares7and8 }}
+                    />
             <Container>
               <Row>
                 <Col md="6">
@@ -168,6 +206,26 @@ class RegisterPage extends React.Component {
                   </div>
                 </Col>
               </Row>
+                <div
+                  className="square square-3"
+                  id="square3"
+                  style={{ transform: this.state.squares1to6 }}
+                />
+                <div
+                  className="square square-4"
+                  id="square4"
+                  style={{ transform: this.state.squares1to6 }}
+                />
+                <div
+                  className="square square-5"
+                  id="square5"
+                  style={{ transform: this.state.squares1to6 }}
+                />
+                <div
+                  className="square square-6"
+                  id="square6"
+                  style={{ transform: this.state.squares1to6 }}
+                />
             </Container>
           </section>
         </div>
