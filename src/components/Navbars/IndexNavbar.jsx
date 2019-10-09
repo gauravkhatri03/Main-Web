@@ -1,30 +1,7 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
 import {
-  Button,
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -35,7 +12,7 @@ import {
   Col
 } from "reactstrap";
 
-class ComponentsNavbar extends React.Component {
+class PagesNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -82,11 +59,6 @@ class ComponentsNavbar extends React.Component {
       collapseOut: ""
     });
   };
-  scrollToDownload = () => {
-    document
-      .getElementById("download-section")
-      .scrollIntoView({ behavior: "smooth" });
-  };
   render() {
     return (
       <Navbar
@@ -100,11 +72,11 @@ class ComponentsNavbar extends React.Component {
               data-placement="bottom"
               to="/"
               rel="noopener noreferrer"
-              title="Designed and Coded by Creative Tim"
+              title="Designed and Coded by DTU TIMES dev team"
               tag={Link}
             >
-              <span>DTU• </span>
-              Times
+              <span>DTU </span>
+              TIMES
             </NavbarBrand>
             <button
               aria-expanded={this.state.collapseOpen}
@@ -127,7 +99,7 @@ class ComponentsNavbar extends React.Component {
               <Row>
                 <Col className="collapse-brand" xs="6">
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    DTU•Times
+                    DTU TIMES
                   </a>
                 </Col>
                 <Col className="collapse-close text-right" xs="6">
@@ -142,86 +114,54 @@ class ComponentsNavbar extends React.Component {
               </Row>
             </div>
             <Nav navbar>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://twitter.com/CreativeTim"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Twitter"
-                >
-                  <i className="fab fa-twitter" />
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.facebook.com/CreativeTim"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Like us on Facebook"
-                >
-                  <i className="fab fa-facebook-square" />
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.instagram.com/CreativeTimOfficial"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Instagram"
-                >
-                  <i className="fab fa-instagram" />
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  data-toggle="dropdown"
-                  href="#pablo"
-                  nav
-                  onClick={e => e.preventDefault()}
-                >
-                  <i className="fa fa-cogs d-lg-none d-xl-none" />
-                  Getting started
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-with-icons">
-                  <DropdownItem href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/tutorial">
-                    <i className="tim-icons icon-paper" />
-                    Documentation
-                  </DropdownItem>
-                  <DropdownItem tag={Link} to="/register-page">
-                    <i className="tim-icons icon-bullet-list-67" />
-                    Register Page
-                  </DropdownItem>
-                  <DropdownItem tag={Link} to="/landing-page">
-                    <i className="tim-icons icon-image-02" />
-                    Landing Page
-                  </DropdownItem>
-                  <DropdownItem tag={Link} to="/profile-page">
-                    <i className="tim-icons icon-single-02" />
-                    Profile Page
-                  </DropdownItem>
-                  <DropdownItem tag={Link} to="/component">
-                <i className="tim-icons icon-image-02" />
-                    Home Page
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
               <NavItem>
-                <Button
-                  className="nav-link d-none d-lg-block"
-                  color="default"
-                  onClick={this.scrollToDownload}
-                >
-                  <i className="tim-icons icon-cloud-download-93" /> Download
-                </Button>
+                <NavLink tag={Link} to="/component">
+                  HOME
+                </NavLink>
               </NavItem>
+
+              <NavItem>
+                <NavLink tag={Link} to="/about">
+                  ABOUT US
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink tag={Link} to="#">
+                  EDITIONS
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink tag={Link} to="/blog">
+                  BLOG
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink tag={Link} to="#">
+                  SOCIETIES
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink tag={Link} to="#">
+                  GALLERY
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink href="#">
+                  TEAM
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink tag={Link} to="/contact">
+                  CONTACT US
+                </NavLink>
+              </NavItem>
+
             </Nav>
           </Collapse>
         </Container>
@@ -230,4 +170,4 @@ class ComponentsNavbar extends React.Component {
   }
 }
 
-export default ComponentsNavbar;
+export default PagesNavbar;

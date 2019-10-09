@@ -19,7 +19,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
+  Button,
   Collapse,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -30,7 +35,7 @@ import {
   Col
 } from "reactstrap";
 
-class PagesNavbar extends React.Component {
+class ComponentsNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,7 +55,7 @@ class PagesNavbar extends React.Component {
       document.body.scrollTop > 99
     ) {
       this.setState({
-        color: "bg-info"
+        color: "bg-default"
       });
     } else if (
       document.documentElement.scrollTop < 100 ||
@@ -77,6 +82,11 @@ class PagesNavbar extends React.Component {
       collapseOut: ""
     });
   };
+  scrollToDownload = () => {
+    document
+      .getElementById("download-section")
+      .scrollIntoView({ behavior: "smooth" });
+  };
   render() {
     return (
       <Navbar
@@ -93,8 +103,8 @@ class PagesNavbar extends React.Component {
               title="Designed and Coded by Creative Tim"
               tag={Link}
             >
-              <span>BLK• </span>
-              Design System React
+              <span>DTU• </span>
+              Times
             </NavbarBrand>
             <button
               aria-expanded={this.state.collapseOpen}
@@ -117,7 +127,7 @@ class PagesNavbar extends React.Component {
               <Row>
                 <Col className="collapse-brand" xs="6">
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    BLK•React
+                    DTU•Times
                   </a>
                 </Col>
                 <Col className="collapse-close text-right" xs="6">
@@ -135,19 +145,7 @@ class PagesNavbar extends React.Component {
               <NavItem className="p-0">
                 <NavLink
                   data-placement="bottom"
-                  href="https://twitter.com/CreativeTim"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Twitter"
-                >
-                  <i className="fab fa-twitter" />
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.facebook.com/CreativeTim"
+                  href="https://www.facebook.com/dtutimes"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Like us on Facebook"
@@ -159,7 +157,7 @@ class PagesNavbar extends React.Component {
               <NavItem className="p-0">
                 <NavLink
                   data-placement="bottom"
-                  href="https://www.instagram.com/CreativeTimOfficial"
+                  href="https://www.instagram.com/dtu_times/"
                   rel="noopener noreferrer"
                   target="_blank"
                   title="Follow us on Instagram"
@@ -168,16 +166,37 @@ class PagesNavbar extends React.Component {
                   <p className="d-lg-none d-xl-none">Instagram</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to="/">
-                  Back to Kit
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/blk-design-system-react/issues">
-                  Have an issue?
-                </NavLink>
-              </NavItem>
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  nav
+                  onClick={e => e.preventDefault()}
+                >
+                  <i className="fa fa-cogs d-lg-none d-xl-none" />
+                  Getting started
+                </DropdownToggle>
+                <DropdownMenu className="dropdown-with-icons">
+                  <DropdownItem href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/tutorial">
+                    <i className="tim-icons icon-paper" />
+                    Documentation
+                  </DropdownItem>
+                  <DropdownItem tag={Link} to="/contact">
+                    <i className="tim-icons icon-bullet-list-67" />
+                    Contact Us
+                  </DropdownItem>
+                  <DropdownItem tag={Link} to="/about">
+                    <i className="tim-icons icon-image-02" />
+                    About Us
+                  </DropdownItem>
+                  <DropdownItem tag={Link} to="/profile-page">
+                    <i className="tim-icons icon-single-02" />
+                    Profile Page
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
             </Nav>
           </Collapse>
         </Container>
@@ -186,4 +205,4 @@ class PagesNavbar extends React.Component {
   }
 }
 
-export default PagesNavbar;
+export default ComponentsNavbar;

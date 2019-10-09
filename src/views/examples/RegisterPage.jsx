@@ -1,10 +1,10 @@
 import React from "react";
 
 // reactstrap components
-import {Button,Card,CardHeader,CardBody,Label,FormGroup,Form,Input,FormText,NavItem,NavLink,Nav,Table,TabContent,TabPane,Container,Row,Col,UncontrolledTooltip,UncontrolledCarousel} from "reactstrap";
+import {Button,Card,CardHeader,CardBody,FormGroup,Form,Input,Container,Row,Col,UncontrolledTooltip} from "reactstrap";
 
 //Google-Maps Api
-import {GoogleMap, withScriptjs, withGoogleMap,Marker,InfoWindow} from 'react-google-maps'
+import {GoogleMap, withScriptjs, withGoogleMap,Marker} from 'react-google-maps'
 
 // core components
 import IndexNavbar from "../../components/Navbars/IndexNavbar";

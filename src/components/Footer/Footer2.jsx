@@ -1,3 +1,20 @@
+/*!
+
+=========================================================
+* BLK Design System React - v1.0.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/blk-design-system-react
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
@@ -19,13 +36,7 @@ class Footer extends React.Component {
         <Container>
           <Row>
             <Col md="3">
-              <h3>About</h3>
-              DTU Times is the Official Newsletter of Delhi Technological
-              University, formerly known as Delhi College of Engineering. We
-              warmly welcome you to the revamped DTU Times Website. Explore the
-              various sections, browse the blog or scan out the archive. You are
-              sure to find content to suit your appetite, and more. There’s
-              something in store for everyone!
+              <h1 className="title">BLK•</h1>
             </Col>
             <Col md="3">
               <Nav>
@@ -117,7 +128,6 @@ class Footer extends React.Component {
               </div>
             </Col>
           </Row>
-          <p style={{textAlign:"center", paddingTop:"3rem", marginBottom:"0"}}>Copyright © 2019 DTU Times</p>
         </Container>
       </footer>
     );

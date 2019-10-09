@@ -28,22 +28,32 @@ import Index from "views/Index.jsx";
 import LandingPage from "views/examples/LandingPage.jsx";
 import RegisterPage from "views/examples/RegisterPage.jsx";
 import ProfilePage from "views/examples/ProfilePage.jsx";
+import Blog from './views/BlogPage/BlogPage';
+import Blog2 from './views/BlogPage/BlogPage2';
 ReactDOM.render(
   <div>
     <BrowserRouter>
     <Switch>
       <Route path="/components" render={props => <Index {...props} />} />
       <Route
-        path="/landing-page"
+        path="/about"
         render={props => <LandingPage {...props} />}
       />
       <Route
-        path="/register-page"
+        path="/contact"
         render={props => <RegisterPage {...props} />}
       />
       <Route
         path="/profile-page"
         render={props => <ProfilePage {...props} />}
+      />
+      <Route
+        path="/blog"
+        render={props => <Blog {...props} />}
+      />
+      <Route
+        path="/blog2"
+        render={props => <Blog2 {...props} />}
       />
       <Redirect from="/" to="/components" />
     </Switch>
