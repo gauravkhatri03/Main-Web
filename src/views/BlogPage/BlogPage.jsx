@@ -1,6 +1,6 @@
 import React from "react";
 import BlogHeader from "../../components/BlogPageComponents/BlogHeader";
-import ExamplesNavbar from "../../components/Navbars/IndexNavbar";
+import IndexNavbar from "../../components/Navbars/IndexNavbar";
 import Footer from "../../components/Footer/Footer";
 import BlogCard from "../../components/BlogPageComponents/BlogCard";
 import { getBlogs } from "../../services/fetchBlogData";
@@ -28,7 +28,7 @@ class Blog extends React.Component {
     var { blogPosts } = this.state;
     return (
       <>
-        <ExamplesNavbar />
+        <IndexNavbar g="chf" />
         <BlogHeader />
         <div className="wrapper">
           {blogPosts.map(post => {
@@ -38,7 +38,7 @@ class Blog extends React.Component {
               </div>
             );
           })}
-          <Footer />
+          <Footer  g= "chf"/>
         </div>
       </>
     );

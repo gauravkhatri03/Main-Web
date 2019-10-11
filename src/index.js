@@ -30,6 +30,10 @@ import RegisterPage from "views/examples/RegisterPage.jsx";
 import ProfilePage from "views/examples/ProfilePage.jsx";
 import Blog from './views/BlogPage/BlogPage';
 import Blog2 from './views/BlogPage/BlogPage2';
+import SocitiesLanding from './components/Socities/socitiesLanding';
+import Cultural from './components/Socities/groups/cultural';
+
+
 ReactDOM.render(
   <div>
     <BrowserRouter>
@@ -54,6 +58,15 @@ ReactDOM.render(
       <Route
         path="/blog2"
         render={props => <Blog2 {...props} />}
+      />
+      <Route
+        path="/socities"
+        exact = {true}
+        render = {props => <SocitiesLanding {...props}/>}
+      />
+      <Route
+        path="/socities/cultural"
+        render = {props => <Cultural {...props}/>}
       />
       <Redirect from="/" to="/components" />
     </Switch>

@@ -4,6 +4,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.jsx";
 import PageHeader from "components/PageHeader/PageHeader.jsx";
 import Footer from "components/Footer/Footer.jsx";
+import App from '../components/Landing_page/landing_page';
 
 class Index extends React.Component {
   constructor(props) {
@@ -32,11 +33,9 @@ class Index extends React.Component {
     const p = "DTU's Official Newsletter";
     return (
       <>
-        <IndexNavbar g= {this.state.foot}/>
+        <IndexNavbar g= {this.state.foot}/> 
         <div className="wrapper">
-          <PageHeader pageName="Times" gradient="chb" para={p} sub="DTU"/>
-          <div className="main">
-          </div>
+          <App/>
           <Footer g={this.state.foot} />
         </div>
       </>

@@ -31,8 +31,10 @@ class PagesNavbar extends React.Component {
       document.documentElement.scrollTop > 99 ||
       document.body.scrollTop > 99
     ) {
-      this.setState({
+      this.setState(()=>{
+        return {
         color: this.props.g
+        }
       });
     } else if (
       document.documentElement.scrollTop < 100 ||
@@ -139,7 +141,7 @@ class PagesNavbar extends React.Component {
               </NavItem>
 
               <NavItem>
-                <NavLink tag={Link} to="#">
+                <NavLink tag={Link} to="/socities">
                   SOCIETIES
                 </NavLink>
               </NavItem>
