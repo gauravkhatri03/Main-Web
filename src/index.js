@@ -38,7 +38,7 @@ ReactDOM.render(
   <div>
     <BrowserRouter>
     <Switch>
-      <Route path="/components" render={props => <Index {...props} />} />
+      <Route path="/" exact={true} render={props => <Index {...props} />} />
       <Route
         path="/about"
         render={props => <LandingPage {...props} />}
@@ -68,7 +68,6 @@ ReactDOM.render(
         path="/socities/cultural"
         render = {props => <Cultural {...props}/>}
       />
-      <Redirect from="/" to="/components" />
     </Switch>
   </BrowserRouter>
   </div>

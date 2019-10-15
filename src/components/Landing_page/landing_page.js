@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Canvas } from 'react-three-fiber'
 // A React x-platform animation library: https://github.com/react-spring/react-spring
 import { useTransition, useSpring, a } from 'react-spring/three'
-import { svgs, colors, deg, doubleSide } from './resources/helpers'
+import { svgs, colors, deg, doubleSide, ac } from './resources/helpers'
 
 /** This component renders a shape */
 function Shape({ shape, rotation, position, color, opacity, index }) {
@@ -17,16 +17,27 @@ function Shape({ shape, rotation, position, color, opacity, index }) {
 }
 
 /** This component sets up a background plane and transitions a group of shapes */
+
 function Scene() {
   const [page, setPage] = useState(0)
   const [shapes, setShapes] = useState([])
+  
   // Switches scenes every 4 seconds
-  useEffect(() => void setInterval(() => setPage(i => (i + 1) % svgs.length), 3000), [])
+  
+  useEffect(() => {void setInterval(() => setPage(i => (i + 1) % svgs.length), 3000)}, [])
+  
   // Converts current SVG into mesh-shapes: https://threejs.org/docs/index.html#examples/loaders/SVGLoader
-  useEffect(() => void svgs[page].then(setShapes), [page])
+  
+  useEffect(() => {void svgs[page].then(setShapes)
+    return () => ac.abort();
+  }, [page])
+  
   // This spring controls the background color animation
+  
   const { color } = useSpring({ color: colors[page] })
+  
   // This one is like a transition group, but instead of handling div's it mounts/unmounts meshes in a fancy way
+  
   const transitions = useTransition(shapes, item => item.shape.uuid, {
     from: { rotation: [-0.2, 0.9, 0], position: [0, 50, -200], opacity: 0 },
     enter: { rotation: [0, 0, 0], position: [0, 0, 0], opacity: 1 },

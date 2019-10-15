@@ -6,3 +6,57 @@
     flex-basis: 1000px;
     margin-top: 8rem;
 }
+#back {
+    background:url(../img/chester-wade.jpg);
+    margin: 1.66%;
+    background-size: cover;
+    background-position: center center;
+    height:200.6px;
+    width:303.8px;
+    border-radius: 0.2857rem
+}
+.over2 {
+    margin-left: 8rem;
+    margin-bottom: -8rem;
+    color: white;
+}
+.gc1{
+    display: flex;
+    flex-direction: column;
+}
+.gc3{
+    flex-basis: 1500px;
+}
+
+.b{
+    z-index: 3 !important;
+    margin-top: -500px !important;
+}
+.a
+{
+    z-index: 3 !important;
+    margin-left: 60px;
+    margin-top: -500px !important;
+}
+
+@keyframes translateUp {
+    0% {
+        transform: translateY(0px);
+        display: none;
+    }
+    2% {
+        display: inline;
+    }
+    25% {
+        transform: translateY(-500px)
+    }
+    50% {
+        transform: translateY(-1000px)
+    }
+    75% {
+        transform: translateY(-1500px)
+    }
+    100% {
+        transform: translateY(-2000px);
+    }
+}

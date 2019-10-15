@@ -6,8 +6,9 @@ import './styles.css'
 const doubleSide = THREE.DoubleSide
 const deg = THREE.Math.degToRad
 const colors = ['#21242d', '#ea5158', '#0d4663', '#ffbcb7', '#2d4a3e', '#8bd8d2']
+const ac = new AbortController();
 const svgs = ['night', 'city', 'morning', 'tubes', 'woods', 'beach']
-  .map(name => `https://raw.githubusercontent.com/drcmda/react-three-fiber/master/examples/resources/images/svg/${name}.svg`)
+  .map(name => `https://raw.githubusercontent.com/drcmda/react-three-fiber/master/examples/resources/images/svg/${name}.svg`,{signal: ac.signal})
   .map(
     url =>
       new Promise(resolve =>
@@ -17,4 +18,4 @@ const svgs = ['night', 'city', 'morning', 'tubes', 'woods', 'beach']
       )
   )
 
-export { svgs, colors, deg, doubleSide }
+export { svgs, colors, deg, doubleSide, ac }
