@@ -32,7 +32,8 @@ import Blog from './views/BlogPage/BlogPage';
 import Blog2 from './views/BlogPage/BlogPage2';
 import SocitiesLanding from './components/Socities/socitiesLanding';
 import Cultural from './components/Socities/groups/cultural';
-
+import GalleryLanding from "./components/Gallery/gallery_landing";
+import GalleryFest from './components/Gallery/gallery_fest';
 
 ReactDOM.render(
   <div>
@@ -67,6 +68,26 @@ ReactDOM.render(
       <Route
         path="/socities/cultural"
         render = {props => <Cultural {...props}/>}
+      />
+      <Route
+        path="/gallery"
+        exact={true}
+        render = {props => <GalleryLanding {...props}/>}
+      />
+      <Route
+        path="/gallery/fest"
+        exact={true}
+        render = {props => <GalleryFest {...props}/>}
+      />
+      <Route
+        path="/gallery/times_canvas"
+        exact={true}
+        render = {props => <GalleryFest {...props}/>}
+      />
+      <Route
+        path="/gallery/seniors_of_dtu"
+        exact={true}
+        render = {props => <GalleryFest {...props}/>}
       />
     </Switch>
   </BrowserRouter>

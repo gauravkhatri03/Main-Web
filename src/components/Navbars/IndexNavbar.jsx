@@ -17,7 +17,7 @@ class PagesNavbar extends React.Component {
     super(props);
     this.state = {
       collapseOpen: false,
-      color: "navbar-transparent"
+      color: "navbar-transparent",
     };
   }
   componentDidMount() {
@@ -147,7 +147,7 @@ class PagesNavbar extends React.Component {
               </NavItem>
 
               <NavItem>
-                <NavLink tag={Link} to="#">
+                <NavLink tag={Link} to="/gallery">
                   GALLERY
                 </NavLink>
               </NavItem>

@@ -1,0 +1,28 @@
+.gal-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-1, .item-2, .item-3 {
+    flex-grow: 1;
+    padding-top:350px;
+    padding-bottom: 320px;
+    flex-shrink: 1;
+}
+.item-1 {
+    background: url('https://images.unsplash.com/photo-1568164528240-21ad793478dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+    background-size: cover;
+    opacity: 1;
+    
+}
+.item-2 {
+    background: url('https://images.unsplash.com/photo-1569409018538-9ab143f62d49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+    opacity: 1;
+    color:#ffffff !important;
+}
+.item-3 {
+    background: url('https://images.unsplash.com/photo-1549828557-c4c4808cc552?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80');
+    opacity: 1;
+}
+.inside {
+    background: rgba(23,22,23,0.5);
+}
