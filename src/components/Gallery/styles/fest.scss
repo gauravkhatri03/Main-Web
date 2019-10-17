@@ -29,3 +29,21 @@
 .inside {
     background: rgba(23,22,23,0.5);
 }
+.black {
+    img {
+        filter: grayscale(10%);
+        transition-property: all;
+        transition-duration: 5s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    img:hover {
+        filter: grayscale(0%) contrast(130%) brightness(0.9);
+        transition-property: all;
+        transition-duration: 5s;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    margin-bottom: 100px;
+}
+.p {
+    background: rgba(23,22,23,0.8);
+}

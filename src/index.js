@@ -34,6 +34,7 @@ import SocitiesLanding from './components/Socities/socitiesLanding';
 import Cultural from './components/Socities/groups/cultural';
 import GalleryLanding from "./components/Gallery/gallery_landing";
 import GalleryFest from './components/Gallery/gallery_fest';
+import YuvaanFest from "./components/Gallery/fests/fest_yuvaan";
 
 ReactDOM.render(
   <div>
@@ -88,6 +89,11 @@ ReactDOM.render(
         path="/gallery/seniors_of_dtu"
         exact={true}
         render = {props => <GalleryFest {...props}/>}
+      />
+      <Route
+        path="/gallery/fest/yuvaan"
+        exact={true}
+        render = {props => <YuvaanFest {...props}/>}
       />
     </Switch>
   </BrowserRouter>
