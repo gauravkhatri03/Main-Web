@@ -68,6 +68,15 @@ background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, F
 	-webkit-animation: gradientBG 10s ease infinite !important;
 	        animation: gradientBG 10s ease infinite !important;
 }
+.chE {
+    background: #40E0D0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite !important;
+	animation: gradientBG 10s ease infinite !important;
+}
 #chb2 {
     background-color: #FEE140;
     background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);

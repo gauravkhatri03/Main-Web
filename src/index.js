@@ -17,7 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss?v=1.0.0";
@@ -36,6 +36,7 @@ import Cultural from './components/Socities/groups/cultural';
 import GalleryLanding from "./components/Gallery/gallery_landing";
 import GalleryFest from './components/Gallery/gallery_fest';
 import YuvaanFest from "./components/Gallery/fests/fest_yuvaan";
+import EditionsLanding from "./components/Editions/editions";
 
 ReactDOM.render(
   <div>
@@ -56,6 +57,7 @@ ReactDOM.render(
       />
       <Route
         path="/blog"
+        exact={true}
         render={props => <Blog {...props} />}
       />
       <Route
@@ -63,8 +65,12 @@ ReactDOM.render(
         render={props => <Blog2 {...props} />}
       />
       <Route
-        path="/blogSingle"
+        path="/blog/:id"
         render={props => <BlogSingle {...props} />}
+      />
+      <Route
+        path="/editions"
+        render={props => <EditionsLanding {...props}/>}
       />
       <Route
         path="/socities"

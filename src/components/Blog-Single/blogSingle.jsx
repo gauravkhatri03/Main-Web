@@ -22,30 +22,106 @@ const readNext = {
   fontSize: "1.2rem",
   paddingTop: "15%"
 };
+const info = [{
+  id: 1,
+  title: "Celebrating 10 years of DTU Times",
+  img: Background,
+  qoutation: "Some catchy quotation for 1st",
+  date: "Published November 26, 2019 by A. Timfoney",
+},
+{
+  id: 2,
+  title: "The title for the next blog comes here",
+  img: Mark,
+  qoutation: "Some catchy quotation",
+  date: "Published November 29, 2019 by B. Timfoney",
+},
+{
+  id: 3,
+  title: "The title for the next blog comes here 3",
+  img: 'https://images.unsplash.com/photo-1569046611351-34f36e84321f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80',
+  qoutation: "Some catchy quotation",
+  date: "Published November 30, 2019 by B. Timfoney",
+},
+{
+  id: 4,
+  title: "The title for the next blog comes here 4",
+  img: 'https://images.unsplash.com/photo-1563212108-928913ca0ee2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1063&q=80',
+  qoutation: "Some catchy quotation",
+  date: "Published November 30, 2019 by B. Timfoney",
+} 
+]
 class BlogSingle extends Component {
-  state = {};
-  blogStyle = function() {
+  state = {
+    index: 0
+  };
+  componentDidMount() {
+    if(Number(this.props.match.params.id)>info.length||Number(this.props.match.params.id)===0) {
+      this.props.history.push('/blog/1')
+      this.setState({
+        index: 0
+      })
+    }
+    else {
+      this.setState({
+        index: Number(this.props.match.params.id)-1
+      })
+      console.log(this.state.index)
+    }
+  }
+  blogStyle =(i) => {
+    if(info.length<=i){
+      i=0
+    }
     var styles = {
       backgroundSize: "100% 100%",
-      backgroundImage: "linear-gradient(black, #33333380), url(" + Background + ")",
+      backgroundImage: "linear-gradient(black, #33333380), url(" + info[i].img + ")",
       height: "60vh"
     };
     return styles;
   };
-  nextBlogStyle = function() {
+  nextBlogStyle = (i) => {
+    i = i+1
+    if(info.length<=i){
+      i=0
+    }
     var styles = {
       backgroundSize: "100% 100%",
-      backgroundImage: "linear-gradient(black, #33333380), url(" + Mark + ")",
+      backgroundImage: "linear-gradient(black, #33333380), url(" + info[i].img + ")",
       height: "60vh"
     };
     return styles;
   };
+nextBlog = () =>{
+  var scrollStep = -window.scrollY / (400 / 15),
+        scrollInterval = setInterval(function(){
+        if ( window.scrollY != 0 ) {
+            window.scrollBy( 0, scrollStep );
+        }
+        else clearInterval(scrollInterval); 
+    },15);
+  // window.scrollTo(0,0)
+  this.setState((pState)=>{
+    if(pState.index<info.length-1){
+      return {
+        index: pState.index+1
+      }
+    }
+    else {
+      return {
+        index:0
+      }
+    }
+  })
+  this.props.history.push('/blog/'+Number(this.state.index+1))
+  console.log(this.state.index)
+}
   render() {
-    const blogStyle = this.blogStyle();
-    const nextBlogCover = this.nextBlogStyle();
+    const blogStyle = this.blogStyle(this.state.index);
+    const nextBlogCover = this.nextBlogStyle(this.state.index);
     return (
       <>
-        <IndexNavbar />
+        <IndexNavbar g= "p"/>
         <div className="wrapper">
           <div className="container-fluid" style={blogStyle}></div>
           <div
@@ -57,7 +133,7 @@ class BlogSingle extends Component {
               <div className="col-9">
                 <div className="publisher-name">
                   <small className="text-muted" style={{ fontSize: "1rem" }}>
-                    Published November 26, 2019 by A. Timfoney
+                    {info[this.state.index].date}
                   </small>
                 </div>
                 <div
@@ -65,11 +141,11 @@ class BlogSingle extends Component {
                   style={{ paddingRight: "7rem" }}
                 >
                   <h1 className="title" style={{ fontSize: "3rem" }}>
-                    Celebrating 10 years of DTU Times
+                    {info[this.state.index].title}
                   </h1>
                 </div>
                 <div className="main-content-subheading">
-                  <h2>Some catchy quotation</h2>
+                  <h2>{info[this.state.index].qoutation}</h2>
                 </div>
                 <div className="main-content-next-info">
                   {/* <h6>Scroll down to go to the next article</h6> */}
@@ -220,22 +296,22 @@ class BlogSingle extends Component {
           </div>
           <div className="container-fluid" style={nextBlogCover}>
             <div style={readNext}>
-              <a href="#pablo" style={{ color: "white" }}>
+              <a onClick={this.nextBlog} style={{ color: "white", cursor:'pointer' }}>
                 Read Next
               </a>
             </div>
             <div style={nextBlogTitle}>
               <h1 className="title" style={{ fontSize: "3rem" }}>
-                The title for the next blog comes here
+                {this.state.index<info.length-1?info[this.state.index+1].title:info[0].title}
               </h1>
             </div>
             <div style={nextBlogQuotation}>
               <h2 style={{ fontSize: "1.5rem" }}>
-                Some catchy quotation for the next blog comes here
+                {this.state.index<info.length-1?info[this.state.index+1].qoutation:info[0].qoutation}
               </h2>
             </div>
           </div>
-          <div
+          {/* <div
             className="container"
             style={{ marginTop: "3rem", marginBottom: "3rem" }}
           >
@@ -259,7 +335,7 @@ class BlogSingle extends Component {
                   <h2>Some catchy quotation</h2>
                 </div>
                 <div className="main-content-next-info">
-                  {/* <h6>Scroll down to go to the next article</h6> */}
+                  <h6>Scroll down to go to the next article</h6>
                 </div>
                 <div className="main-content">
                   <p
@@ -404,7 +480,7 @@ class BlogSingle extends Component {
               </div>
               <div className="col"></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     );

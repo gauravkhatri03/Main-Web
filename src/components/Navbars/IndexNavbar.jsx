@@ -129,7 +129,7 @@ class PagesNavbar extends React.Component {
               </NavItem>
 
               <NavItem>
-                <NavLink tag={Link} to="#">
+                <NavLink tag={Link} to="/editions">
                   EDITIONS
                 </NavLink>
               </NavItem>

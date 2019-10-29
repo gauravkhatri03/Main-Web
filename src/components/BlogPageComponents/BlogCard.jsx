@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import {
   Button,
   // Card,
@@ -52,14 +53,18 @@ const BlogCard = props => {
               <i className="tim-icons icon-camera-18" /> 5 days ago
             </p>
             <div className="btn-wrapper pt-3">
+            <Link to={'/blog/'+ props.backText}>
               <Button
                 className="btn-round"
                 color="primary"
                 href="#pablo"
-                onClick={e => e.preventDefault()}
-              >
+                onClick={() =>{
+                  window.scrollTo(0,0)
+                }}
+              > 
                 <i className="tim-icons icon-book-bookmark" /> Read More
               </Button>
+              </Link>
             </div>
           </Col>
         </Row>
