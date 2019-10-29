@@ -30,6 +30,7 @@ import RegisterPage from "views/examples/RegisterPage.jsx";
 import ProfilePage from "views/examples/ProfilePage.jsx";
 import Blog from './views/BlogPage/BlogPage';
 import Blog2 from './views/BlogPage/BlogPage2';
+import BlogSingle from "./components/Blog-Single/blogSingle";
 import SocitiesLanding from './components/Socities/socitiesLanding';
 import Cultural from './components/Socities/groups/cultural';
 import GalleryLanding from "./components/Gallery/gallery_landing";
@@ -60,6 +61,10 @@ ReactDOM.render(
       <Route
         path="/blog2"
         render={props => <Blog2 {...props} />}
+      />
+      <Route
+        path="/blogSingle"
+        render={props => <BlogSingle {...props} />}
       />
       <Route
         path="/socities"
