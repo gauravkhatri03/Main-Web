@@ -26,7 +26,7 @@ import "assets/demo/new.scss"
 
 import Index from "views/Index.jsx";
 import LandingPage from "views/examples/LandingPage.jsx";
-import RegisterPage from "views/examples/RegisterPage.jsx";
+// import RegisterPage from "views/examples/RegisterPage.jsx";
 import ProfilePage from "views/examples/ProfilePage.jsx";
 import Blog from './views/BlogPage/BlogPage';
 import Blog2 from './views/BlogPage/BlogPage2';
@@ -37,6 +37,7 @@ import GalleryLanding from "./components/Gallery/gallery_landing";
 import GalleryFest from './components/Gallery/gallery_fest';
 import YuvaanFest from "./components/Gallery/fests/fest_yuvaan";
 import EditionsLanding from "./components/Editions/editions";
+import ContactUs from "./components/ContactUs/contact";
 
 ReactDOM.render(
   <div>
@@ -49,7 +50,7 @@ ReactDOM.render(
       />
       <Route
         path="/contact"
-        render={props => <RegisterPage {...props} />}
+        render={props => <ContactUs {...props} />}
       />
       <Route
         path="/profile-page"

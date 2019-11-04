@@ -22,108 +22,153 @@ const readNext = {
   fontSize: "1.2rem",
   paddingTop: "15%"
 };
-const info = [{
-  id: 1,
-  title: "Celebrating 10 years of DTU Times",
-  img: Background,
-  qoutation: "Some catchy quotation for 1st",
-  date: "Published November 26, 2019 by A. Timfoney",
-},
-{
-  id: 2,
-  title: "The title for the next blog comes here",
-  img: Mark,
-  qoutation: "Some catchy quotation",
-  date: "Published November 29, 2019 by B. Timfoney",
-},
-{
-  id: 3,
-  title: "The title for the next blog comes here 3",
-  img: 'https://images.unsplash.com/photo-1569046611351-34f36e84321f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80',
-  qoutation: "Some catchy quotation",
-  date: "Published November 30, 2019 by B. Timfoney",
-},
-{
-  id: 4,
-  title: "The title for the next blog comes here 4",
-  img: 'https://images.unsplash.com/photo-1563212108-928913ca0ee2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1063&q=80',
-  qoutation: "Some catchy quotation",
-  date: "Published November 30, 2019 by B. Timfoney",
-} 
-]
+const authorStyle = {
+  height: "10vh",
+  position: "absolute",
+  bottom: "20%",
+  right: "0",
+  left: "0"
+};
+const authorInfo = {
+  position: "absolute",
+  bottom: "10%",
+  left: "0",
+  right: "0",
+  textAlign: "center",
+  height: "2vh"
+};
+const authorName = {
+  position: "absolute",
+  bottom: "15%",
+  left: "0",
+  right: "0",
+  textAlign: "center",
+  height: "2vh"
+};
+const info = [
+  {
+    id: 1,
+    title: "Celebrating 10 years of DTU Times",
+    img: Background,
+    qoutation: "Some catchy quotation for 1st",
+    authorImg: require("../../assets/img/ryan.jpg"),
+    date: "Published November 26, 2019 by A. Timfoney"
+  },
+  {
+    id: 2,
+    title: "The title for the next blog comes here",
+    img: Mark,
+    qoutation: "Some catchy quotation",
+    authorImg: require("../../assets/img/ryan.jpg"),
+    date: "Published November 29, 2019 by B. Timfoney"
+  },
+  {
+    id: 3,
+    title: "The title for the next blog comes here 3",
+    img:
+      "https://images.unsplash.com/photo-1569046611351-34f36e84321f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80",
+    qoutation: "Some catchy quotation",
+    authorImg: require("../../assets/img/ryan.jpg"),
+    date: "Published November 30, 2019 by B. Timfoney"
+  },
+  {
+    id: 4,
+    title: "The title for the next blog comes here 4",
+    img:
+      "https://images.unsplash.com/photo-1563212108-928913ca0ee2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1063&q=80",
+    qoutation: "Some catchy quotation",
+    authorImg: require("../../assets/img/ryan.jpg"),
+    date: "Published November 30, 2019 by B. Timfoney"
+  }
+];
 class BlogSingle extends Component {
   state = {
     index: 0
   };
   componentDidMount() {
-    if(Number(this.props.match.params.id)>info.length||Number(this.props.match.params.id)===0) {
-      this.props.history.push('/blog/1')
+    if (
+      Number(this.props.match.params.id) > info.length ||
+      Number(this.props.match.params.id) === 0
+    ) {
+      this.props.history.push("/blog/1");
       this.setState({
         index: 0
-      })
-    }
-    else {
+      });
+    } else {
       this.setState({
-        index: Number(this.props.match.params.id)-1
-      })
-      console.log(this.state.index)
+        index: Number(this.props.match.params.id) - 1
+      });
+      console.log(this.state.index);
     }
   }
-  blogStyle =(i) => {
-    if(info.length<=i){
-      i=0
+  blogStyle = i => {
+    if (info.length <= i) {
+      i = 0;
     }
     var styles = {
       backgroundSize: "100% 100%",
-      backgroundImage: "linear-gradient(black, #33333380), url(" + info[i].img + ")",
+      backgroundImage:
+        "linear-gradient(black, #33333380), url(" + info[i].img + ")",
+      height: "80vh",
+      position: "relative"
+    };
+    return styles;
+  };
+  nextBlogStyle = i => {
+    i = i + 1;
+    if (info.length <= i) {
+      i = 0;
+    }
+    var styles = {
+      backgroundSize: "100% 100%",
+      backgroundImage:
+        "linear-gradient(black, #33333380), url(" + info[i].img + ")",
       height: "60vh"
     };
     return styles;
   };
-  nextBlogStyle = (i) => {
-    i = i+1
-    if(info.length<=i){
-      i=0
-    }
-    var styles = {
-      backgroundSize: "100% 100%",
-      backgroundImage: "linear-gradient(black, #33333380), url(" + info[i].img + ")",
-      height: "60vh"
-    };
-    return styles;
+  nextBlog = () => {
+    var scrollStep = -window.scrollY / (400 / 15),
+      scrollInterval = setInterval(function() {
+        if (window.scrollY != 0) {
+          window.scrollBy(0, scrollStep);
+        } else clearInterval(scrollInterval);
+      }, 15);
+    // window.scrollTo(0,0)
+    this.setState(pState => {
+      if (pState.index < info.length - 1) {
+        return {
+          index: pState.index + 1
+        };
+      } else {
+        return {
+          index: 0
+        };
+      }
+    });
+    this.props.history.push("/blog/" + Number(this.state.index + 1));
+    console.log(this.state.index);
   };
-nextBlog = () =>{
-  var scrollStep = -window.scrollY / (400 / 15),
-        scrollInterval = setInterval(function(){
-        if ( window.scrollY != 0 ) {
-            window.scrollBy( 0, scrollStep );
-        }
-        else clearInterval(scrollInterval); 
-    },15);
-  // window.scrollTo(0,0)
-  this.setState((pState)=>{
-    if(pState.index<info.length-1){
-      return {
-        index: pState.index+1
-      }
-    }
-    else {
-      return {
-        index:0
-      }
-    }
-  })
-  this.props.history.push('/blog/'+Number(this.state.index+1))
-  console.log(this.state.index)
-}
   render() {
     const blogStyle = this.blogStyle(this.state.index);
     const nextBlogCover = this.nextBlogStyle(this.state.index);
     return (
       <>
-        <IndexNavbar g= "p"/>
+        <IndexNavbar g="p" />
         <div className="wrapper">
-          <div className="container-fluid" style={blogStyle}></div>
+          <div className="container-fluid" style={blogStyle}>
+            <div className="">
+              <img
+                src={info[this.state.index].authorImg}
+                className=" rounded-circle img-set img-center"
+                style={authorStyle}
+              />
+            </div>
+            <p style={authorName}>abc</p>
+            <p style={authorInfo}>
+              Hello this is a sample text for the caption of the author
+            </p>
+          </div>
           <div
             className="container"
             style={{ marginTop: "3rem", marginBottom: "3rem" }}
@@ -140,12 +185,14 @@ nextBlog = () =>{
                   className="main-content-heading"
                   style={{ paddingRight: "7rem" }}
                 >
-                  <h1 className="title" style={{ fontSize: "3rem" }}>
+                  <h1 className="title" style={{ fontSize: "5vh" }}>
                     {info[this.state.index].title}
                   </h1>
                 </div>
                 <div className="main-content-subheading">
-                  <h2>{info[this.state.index].qoutation}</h2>
+                  <h2 style={{ fontSize: "3vh" }}>
+                    {info[this.state.index].qoutation}
+                  </h2>
                 </div>
                 <div className="main-content-next-info">
                   {/* <h6>Scroll down to go to the next article</h6> */}
@@ -158,7 +205,7 @@ nextBlog = () =>{
                       lineHeight: "2rem",
                       wordSpacing: "0.1rem",
                       fontFamily: "PT Serif, serif",
-                      fontSize: "1.3rem"
+                      fontSize: "2.8vh"
                     }}
                   >
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -296,18 +343,25 @@ nextBlog = () =>{
           </div>
           <div className="container-fluid" style={nextBlogCover}>
             <div style={readNext}>
-              <a onClick={this.nextBlog} style={{ color: "white", cursor:'pointer' }}>
+              <a
+                onClick={this.nextBlog}
+                style={{ color: "white", cursor: "pointer" }}
+              >
                 Read Next
               </a>
             </div>
             <div style={nextBlogTitle}>
               <h1 className="title" style={{ fontSize: "3rem" }}>
-                {this.state.index<info.length-1?info[this.state.index+1].title:info[0].title}
+                {this.state.index < info.length - 1
+                  ? info[this.state.index + 1].title
+                  : info[0].title}
               </h1>
             </div>
             <div style={nextBlogQuotation}>
               <h2 style={{ fontSize: "1.5rem" }}>
-                {this.state.index<info.length-1?info[this.state.index+1].qoutation:info[0].qoutation}
+                {this.state.index < info.length - 1
+                  ? info[this.state.index + 1].qoutation
+                  : info[0].qoutation}
               </h2>
             </div>
           </div>
