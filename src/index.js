@@ -57,7 +57,7 @@ ReactDOM.render(
         render={props => <ProfilePage {...props} />}
       />
       <Route
-        path="/blog"
+        path="/story"
         exact={true}
         render={props => <Blog {...props} />}
       />
@@ -66,7 +66,7 @@ ReactDOM.render(
         render={props => <Blog2 {...props} />}
       />
       <Route
-        path="/blog/:id"
+        path="/story/"
         render={props => <BlogSingle {...props} />}
       />
       <Route

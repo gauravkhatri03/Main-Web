@@ -135,7 +135,7 @@ class PagesNavbar extends React.Component {
               </NavItem>
 
               <NavItem>
-                <NavLink tag={Link} to="/blog">
+                <NavLink tag={Link} to="/story">
                   BLOG
                 </NavLink>
               </NavItem>

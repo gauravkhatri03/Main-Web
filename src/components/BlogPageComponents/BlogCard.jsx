@@ -36,12 +36,14 @@ const BlogCard = props => {
               <i className="tim-icons icon-camera-18" /> {created_at}
             </p>
             <div className="btn-wrapper pt-3">
-              <Link to={"/blog/" + props.backText}>
+              <Link to="#">
                 <Button
                   className="btn-round"
                   color="primary"
                   href={"http://api.dtutimes.live/v1/" + slug}
                   onClick={() => {
+                    // localStorage.setItem("slug", slug);
+                    window.open("/story/" + slug)
                     window.scrollTo(0, 0);
                   }}
                 >
