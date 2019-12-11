@@ -29,7 +29,9 @@ const authorInfo = {
   left: "0",
   right: "0",
   textAlign: "center",
-  height: "2vh"
+  height: "2vh",
+  fontSize: "1rem",
+  fontWeight: "600"
 };
 const authorName = {
   position: "absolute",
@@ -37,8 +39,21 @@ const authorName = {
   left: "0",
   right: "0",
   textAlign: "center",
-  height: "2vh"
+  height: "2vh",
+  fontSize: "1rem",
+  fontWeight: "600"
 };
+const blogBodyStyle = {
+    color: "rgba(255, 255, 255, 0.8)",
+    lineHeight: "2rem",
+    wordSpacing: "0.1rem",
+    fontFamily: "PT Serif, serif",
+    fontSize: "2.8vh",
+    // @media only screen and (maxWidth: "500px"){
+    //   fontSize: "1.8vh",
+
+    // }
+}
 class BlogSingle extends Component {
   state = {
     index: 0,
@@ -97,8 +112,8 @@ class BlogSingle extends Component {
   };
   nextBlog = () => {
     var scrollStep = -window.scrollY / (400 / 15),
-      scrollInterval = setInterval(function() {
-        if (window.scrollY != 0) {
+      scrollInterval = setInterval(function () {
+        if (window.scrollY !== 0) {
           window.scrollBy(0, scrollStep);
         } else clearInterval(scrollInterval);
       }, 15);
@@ -121,7 +136,7 @@ class BlogSingle extends Component {
       .catch(err => {
         console.log(err);
       });
-      // this.props.history.push("/story/" + this.state.currentblogSlug);
+    // this.props.history.push("/story/" + this.state.currentblogSlug);
   };
   render() {
     var { currentBlogData, nextBlogData, blogBody } = this.state;
@@ -143,6 +158,7 @@ class BlogSingle extends Component {
                 // src={info[this.state.index].authorImg}
                 className=" rounded-circle img-set img-center"
                 style={authorStyle}
+                alt=""
               />
             </div>
             {currentBlogData.user && (
@@ -183,7 +199,7 @@ class BlogSingle extends Component {
                       lineHeight: "2rem",
                       wordSpacing: "0.1rem",
                       fontFamily: "PT Serif, serif",
-                      fontSize: "2.8vh"
+                      fontSize: "2.8vh",
                     }}
                   >
                     {blogBody}

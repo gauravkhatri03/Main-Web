@@ -2,6 +2,11 @@ import React from "react";
 // reactstrap components
 // import { Container } from "reactstrap";
 import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
+const headerStyle = {
+  position: "absolute",
+  left:"0",
+  right:"0",
+}
 class BlogHeader extends React.Component {
   render() {
     return (
@@ -16,13 +21,14 @@ class BlogHeader extends React.Component {
         <Container>
           <div className="content-center brand" style={{top:"38%"}}>
             <Container>
+                  <h5 className="text-on-back">DTU
                   <h1
                     className="profile-title text-right"
-                    style={{ left: "70%", top:"60%", position:"absolute" }}
+                    style={headerStyle}
                   >
                     Blogs
                   </h1>
-                  <h5 className="text-on-back">DTU</h5>
+                  </h5>
                   <p className="profile-description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Dolores harum ea minus placeat debitis, perspiciatis sequi
